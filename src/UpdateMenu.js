@@ -8,21 +8,33 @@ export default function UpdateMenu() {
     const [logMessage, setLogMessage] = useState([]);
 
     const clearLog = () => {
-        Alert.alert(
-            "Warning", "Are you sure to delete the logs?",
-            [
-                {
-                    text: "Yes",
-                    onPress: () => setLogMessage([]),
-                    style: 'destructive'
-                },
-                {
-                    text: "No",
-                    onPress: () => {},
-                    style: 'cancel'
-                }
-            ]
-        );
+        if(logMessage.length > 0) {
+            Alert.alert(
+                "Warning", "Are you sure to delete the logs?",
+                [
+                    {
+                        text: "Yes",
+                        onPress: () => setLogMessage([]),
+                        style: 'destructive'
+                    },
+                    {
+                        text: "No",
+                        onPress: () => {},
+                        style: 'cancel'
+                    }
+                ]
+            );
+        } else {
+            Alert.alert(
+                "Warning", "The status display is empty.",
+                [
+                    {
+                        text: "OK",
+                        onPress: () => {},
+                    },
+                ]
+            );
+        }
     }
 
     useEffect(() => {
