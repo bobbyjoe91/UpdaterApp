@@ -11,7 +11,7 @@ function getTodaysDate() {
     let month = todayDate.getMonth() < 10 ? `0${todayDate.getMonth()}` : todayDate.getMonth();
     let year = todayDate.getFullYear();
 
-    return `${day}, ${date} ${month} ${year}`;
+    return `${day}, ${date}-${month}-${year}`;
 }
 
 export default function MainMenu() {
@@ -40,14 +40,17 @@ export default function MainMenu() {
                 <StatsCard 
                     title="Cases"
                     p={cases}
+                    bgColor='#27AE60'
                 />
                 <StatsCard 
                     title="Deaths"
                     p={deaths}
+                    bgColor='#EB5757'
                 />
                 <StatsCard 
                     title="Recovered"
                     p={recovered}
+                    bgColor='#2D9CDB'
                 />
             </View>
         </View>
