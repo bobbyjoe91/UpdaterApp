@@ -1,34 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
-export default function Status() {
+export default function Status({ logs }) {
     return(
         <View style={styles.status}>
             <ScrollView>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-                <Text style={{marginBottom: 5}}>
-                    [22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
+                {logs.map((log, index) => {
+                    return(
+                        <Text key={index} style={{marginBottom: 14}}>
+                            {log}
+                        </Text>
+                    )
+                })}
             </ScrollView>
         </View>
     );

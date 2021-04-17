@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useState } from 'react/cjs/react.development';
 
 import Status from './components/Status';
 import UtilButton from './components/UtilButton';
 
 export default function UpdateMenu() {
-    let [text, setText] = useState('Status');
+    const [logMessage, setLogMessage] = useState([]);
+
+    useEffect(() => {
+        let messages = [
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        ];
+
+        setLogMessage(messages);
+    }, [])
+
     return(
         <View style={styles.central}>
-            <Text style={{textAlign: 'left', marginBottom: 3}}>{text}</Text>
-            <Status />
+            <Text style={{textAlign: 'left', marginBottom: 3}}>Status</Text>
+            <Status logs={logMessage}/>
             <View style={styles.utilView}>
                 <UtilButton 
                     title='CLEAR'
                     color='#EB7B57'
+                    func={() => {setLogMessage([])}}
                 />
                 <UtilButton 
                     title='UPDATE'
