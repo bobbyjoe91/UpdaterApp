@@ -1,11 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Alert, View, Text, StyleSheet } from 'react-native';
 
 import Status from './components/Status';
 import UtilButton from './components/UtilButton';
 
 export default function UpdateMenu() {
     const [logMessage, setLogMessage] = useState([]);
+
+    const clearLog = () => {
+        Alert.alert(
+            "Warning", "Are you sure to delete the logs?",
+            [
+                {
+                    text: "Yes",
+                    onPress: () => setLogMessage([]),
+                    style: 'destructive'
+                },
+                {
+                    text: "No",
+                    onPress: () => {},
+                    style: 'cancel'
+                }
+            ]
+        );
+    }
 
     useEffect(() => {
         let messages = [
@@ -30,7 +48,7 @@ export default function UpdateMenu() {
                 <UtilButton 
                     title='CLEAR'
                     color='#EB7B57'
-                    func={() => {setLogMessage([])}}
+                    func={clearLog}
                 />
                 <UtilButton 
                     title='UPDATE'
