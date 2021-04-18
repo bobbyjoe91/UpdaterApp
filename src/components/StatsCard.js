@@ -37,14 +37,14 @@ function StatsCard(props) {
         },
         p: {
             textAlign: 'center',
-            color: 'white'
+            color: 'white',
         }
     });
 
     return(
         <View style={styles.container}>
             <Text style={{...styles.p, ...styles.title, fontSize: 18}}>{props.title}</Text>
-            <Text style={{...styles.p, fontSize: 36}}>
+            <Text style={{...styles.p, fontSize: 36, fontFamily: 'InconsolataSemiCondensed-Regular'}}>
                 {addDecimalPoints(String(props.p))}
             </Text>
         </View>

@@ -14,6 +14,8 @@
 		44FCFC2E14A2E14AA1DA22B5 /* libPods-UpdaterApp-UpdaterAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47931BC6B3D8C52736F88DC1 /* libPods-UpdaterApp-UpdaterAppTests.a */; };
 		6709561C9720B0E96D33EDF0 /* libPods-UpdaterApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6834CDC97BE0047B50A1251 /* libPods-UpdaterApp.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9896F144E7F5416F905F38F7 /* InconsolataSemiCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B94B2C1F52844888482A112 /* InconsolataSemiCondensed-Light.ttf */; };
+		C050A78468944A1F96D47E51 /* InconsolataSemiCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EC8A429F1284940BE545BC0 /* InconsolataSemiCondensed-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +42,12 @@
 		47931BC6B3D8C52736F88DC1 /* libPods-UpdaterApp-UpdaterAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdaterApp-UpdaterAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		663CADF2D68812BD48D9F2FD /* Pods-UpdaterApp-UpdaterAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdaterApp-UpdaterAppTests.debug.xcconfig"; path = "Target Support Files/Pods-UpdaterApp-UpdaterAppTests/Pods-UpdaterApp-UpdaterAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UpdaterApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B94B2C1F52844888482A112 /* InconsolataSemiCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "InconsolataSemiCondensed-Light.ttf"; path = "../assets/fonts/InconsolataSemiCondensed-Light.ttf"; sourceTree = "<group>"; };
 		B8CF21E517F6B2104F210598 /* Pods-UpdaterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdaterApp.debug.xcconfig"; path = "Target Support Files/Pods-UpdaterApp/Pods-UpdaterApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BDAAC3EAFF8962961EDCD373 /* Pods-UpdaterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpdaterApp.release.xcconfig"; path = "Target Support Files/Pods-UpdaterApp/Pods-UpdaterApp.release.xcconfig"; sourceTree = "<group>"; };
 		D6834CDC97BE0047B50A1251 /* libPods-UpdaterApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UpdaterApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		4EC8A429F1284940BE545BC0 /* InconsolataSemiCondensed-Regular.ttf */ = {isa = PBXFileReference; name = "InconsolataSemiCondensed-Regular.ttf"; path = "../assets/fonts/InconsolataSemiCondensed-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				8E3E1011FED12280892F128F /* Pods */,
+				F9F14DBD1582456B87CBD6A3 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -145,8 +150,16 @@
 				663CADF2D68812BD48D9F2FD /* Pods-UpdaterApp-UpdaterAppTests.debug.xcconfig */,
 				350CC1C69B4FF4431584FA4D /* Pods-UpdaterApp-UpdaterAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F9F14DBD1582456B87CBD6A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B94B2C1F52844888482A112 /* InconsolataSemiCondensed-Light.ttf */,
+				4EC8A429F1284940BE545BC0 /* InconsolataSemiCondensed-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +258,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9896F144E7F5416F905F38F7 /* InconsolataSemiCondensed-Light.ttf in Resources */,
+				C050A78468944A1F96D47E51 /* InconsolataSemiCondensed-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
