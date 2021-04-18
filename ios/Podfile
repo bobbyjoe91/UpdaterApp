@@ -12,6 +12,7 @@ target 'UpdaterApp' do
     :hermes_enabled => false
   )
 
+
   target 'UpdaterAppTests' do
     inherit! :complete
     # Pods for testing
