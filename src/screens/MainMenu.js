@@ -1,18 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { getTodaysDate } from '../utils';
 
-import StatsCard from './components/StatsCard';
-
-function getTodaysDate() {
-    let todayDate = new Date();
-    let nameOfDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    let day = nameOfDay[todayDate.getDay()];
-    let date = todayDate.getDate() < 10 ? `0${todayDate.getDate()}` : todayDate.getDate();
-    let month = todayDate.getMonth() < 10 ? `0${todayDate.getMonth()}` : todayDate.getMonth();
-    let year = todayDate.getFullYear();
-
-    return `${day}, ${date}-${month}-${year}`;
-}
+import StatsCard from '../components/StatsCard';
 
 export default function MainMenu() {
     let [cases, setCases] = useState(0);

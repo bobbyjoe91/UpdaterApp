@@ -11,8 +11,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import MainMenu from './src/MainMenu';
-import UpdateMenu from './src/UpdateMenu';
+import MainMenu from './src/screens/MainMenu';
+import UpdateMenu from './src/screens/UpdateMenu';
 
 const Tab = createBottomTabNavigator();
 

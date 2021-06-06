@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, View, Text, StyleSheet } from 'react-native';
 
-import Status from './components/Status';
-import UtilButton from './components/UtilButton';
+import Status from '../components/Status';
+import UtilButton from '../components/UtilButton';
 
 export default function UpdateMenu() {
     const [logMessage, setLogMessage] = useState([]);
