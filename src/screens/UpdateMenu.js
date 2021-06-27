@@ -5,7 +5,33 @@ import Status from '../components/Status';
 import UtilButton from '../components/UtilButton';
 
 export default function UpdateMenu() {
-    const [logMessage, setLogMessage] = useState([]);
+    let messages = [
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    ];
+
+    const [logMessage, setLogMessage] = useState(messages);
+
+    const updateCovidData = async () => {
+        let response;
+        try {
+            let responseObject = await fetch('http://localhost:3000/updater/update');
+            response = await responseObject.json();
+        } catch(err) {
+            response = { 
+                status: 'Update failed' 
+            };
+            console.log('error', err)
+        }
+        
+        setLogMessage([...logMessage, response.status]);
+    }
 
     const clearLog = () => {
         if(logMessage.length > 0) {
@@ -37,21 +63,6 @@ export default function UpdateMenu() {
         }
     }
 
-    useEffect(() => {
-        let messages = [
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            '[22:47:15] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        ];
-
-        setLogMessage(messages);
-    }, [])
-
     return(
         <View style={styles.central}>
             <Text style={{textAlign: 'left', marginBottom: 3}}>Status</Text>
@@ -65,6 +76,7 @@ export default function UpdateMenu() {
                 <UtilButton 
                     title='UPDATE'
                     color='#56CCF2'
+                    func={updateCovidData}
                 />
             </View>
         </View>
