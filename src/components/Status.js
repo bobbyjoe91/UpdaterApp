@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 export default function Status({ logs }) {
+    const logScrollView = useRef();
+
+    useEffect(() => {
+        logScrollView.current ? logScrollView.current.scrollToEnd() : null;
+    }, [logs]);
+
     return(
         <View style={styles.status}>
-            <ScrollView>
+            <ScrollView ref={logScrollView}>
                 {logs.map((log, index) => {
                     return(
                         <Text key={index} style={{marginBottom: 14}}>
