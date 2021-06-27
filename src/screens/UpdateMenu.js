@@ -17,9 +17,12 @@ export default function UpdateMenu() {
     ];
 
     const [logMessage, setLogMessage] = useState(messages);
+    const [isUpdating, updating] = useState(false);
 
     const updateCovidData = async () => {
         let response;
+
+        updating(true);
         try {
             let responseObject = await fetch('http://localhost:3000/updater/update');
             response = await responseObject.json();
@@ -27,10 +30,10 @@ export default function UpdateMenu() {
             response = { 
                 status: 'Update failed' 
             };
-            console.log('error', err)
         }
         
         setLogMessage([...logMessage, response.status]);
+        updating(false);
     }
 
     const clearLog = () => {
@@ -66,7 +69,7 @@ export default function UpdateMenu() {
     return(
         <View style={styles.central}>
             <Text style={{textAlign: 'left', marginBottom: 3}}>Status</Text>
-            <Status logs={logMessage}/>
+            <Status logs={logMessage} isLoading={isUpdating} />
             <View style={styles.utilView}>
                 <UtilButton 
                     title='CLEAR'

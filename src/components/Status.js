@@ -1,24 +1,29 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import React, { useRef } from 'react';
+import { ActivityIndicator, View, Text, StyleSheet, ScrollView } from 'react-native';
 
-export default function Status({ logs }) {
-    const logScrollView = useRef();
-
-    useEffect(() => {
-        logScrollView.current ? logScrollView.current.scrollToEnd() : null;
-    }, [logs]);
+export default function Status({ logs, isLoading }) {
+    const logScrollView = useRef('');
 
     return(
         <View style={styles.status}>
-            <ScrollView ref={logScrollView}>
-                {logs.map((log, index) => {
-                    return(
-                        <Text key={index} style={{marginBottom: 14}}>
-                            {log}
-                        </Text>
-                    )
-                })}
-            </ScrollView>
+            {
+                isLoading ? 
+                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                    <ActivityIndicator size='large' color='#27AE60' />
+                </View>
+            :
+                <ScrollView ref={logScrollView} onContentSizeChange={() => logScrollView.current.scrollToEnd()}>
+                    {
+                        logs.map((log, index) => {
+                            return(
+                                <Text key={index} style={{ marginBottom: 14 }}>
+                                    {log}
+                                </Text>
+                            )
+                        })
+                    }
+                </ScrollView>
+            }
         </View>
     );
 }
